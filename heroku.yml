@@ -1,0 +1,13 @@
+setup:
+  addons:
+    - plan: heroku-postgresql
+      as: db
+  config:
+    POSTGRES_USER: test
+    POSTGRES_PASSWORD: test
+    POSTGRES_DB: test
+    postgres-data: /var/lib/postgresql/data    
+build:
+  docker:
+    web: Dockerfile
+    worker: worker/Dockerfile

@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    depends_on:
+      - db
+    networks:
+      - default
+    environment:
+      FLASK_APP: main.py
+      SQLALCHEMY_DATABASE_URI: 'postgresql+psycopg2://test:test@192.168.99.100:5007/test'
+    
+    ports:
+      - 5007:5000
+    volumes:
+      - ./app:/usr/src/app/app
+      - ./migrations:/usr/src/app/migrations
+    restart: always
+
+  db:
+    
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+      postgres-data: /var/lib/postgresql/data
+    image: postgres:latest
+    networks:
+      - default
+    ports:
+      - 5406:5432
+    restart: always
+
+volumes:
+  postgres-data:
+    external: true
