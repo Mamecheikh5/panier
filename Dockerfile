@@ -13,7 +13,8 @@ RUN pip install -r requirements.txt
 #EXPOSE 80
 
 #RUN chmod +x /app/docker-entrypoint.sh
+
 # Run app.py when the container launches
-CMD flask run
+CMD ["gunicorn", "main.py"]
 #ENTRYPOINT ["./docker-compose.sh"]
 
