@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 
 #RUN chmod +x /app/docker-entrypoint.sh
 # Run app.py when the container launches
-CMD python main.py 
+CMD flask run
 #ENTRYPOINT ["./docker-compose.sh"]
 
