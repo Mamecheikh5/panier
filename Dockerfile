@@ -14,6 +14,6 @@ RUN pip install -r requirements.txt
 
 #RUN chmod +x /app/docker-entrypoint.sh
 # Run app.py when the container launches
-CMD ["gunicorn","main:app"]
+CMD set FLASK_APP=main.py && set FLASK_CONFIG=development && python main.py 
 #ENTRYPOINT ["./docker-compose.sh"]
 
