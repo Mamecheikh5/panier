@@ -88,6 +88,12 @@ class Code_promos(db.Model):
     Créons une requête pour modifier le statut d'une commande 
 """    
 
+@app.route('/', methods=['GET'])
+def bonjour():
+
+    return 'bonjour'
+
+
 
 @app.route('/addcode', methods=['POST'])
 def add_code():
