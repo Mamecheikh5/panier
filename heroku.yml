@@ -10,4 +10,4 @@ setup:
 build:
   docker:
     web: Dockerfile
-    worker: Dockerfile
+    worker: ./Dockerfile
