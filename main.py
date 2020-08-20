@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://test:test@postgresql-curly-69959/test'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://tihkiokmwjbakj:dbbd710fa493762c138bb60ef873e7eb86c5282f63f9725a3fe169b2ae0c73d7@ec2-54-144-177-189.compute-1.amazonaws.com:5432/dcahdg8390cnsa'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'jknjknc6v468v86v354'
 
